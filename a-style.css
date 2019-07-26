@@ -1,0 +1,50 @@
+﻿.navbar {
+            z-index: 100;
+            border: 0
+        }
+        .navbar-inverse {
+            background: #27313e
+        }
+        .navbar-inverse .navbar-brand {
+            font-weight: 700;
+            text-shadow: 1px 1px 2px #000, 0 0 1em #5bb8cc;
+            font-size: 20px
+        }
+        .navbar-inverse .navbar-brand:first-letter {
+            text-transform: uppercase
+        }
+        .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+            background-color: #232c36
+        }
+	.btn, .btn:hover {
+    border-color: #000000;
+	}
+	.btn.focus, .btn:focus, .btn:hover {
+    color: #836fc1;
+	}
+	.navbar-inverse {
+    background: #27203a;
+	}
+	#mainpage, #leftpanel, #right-panel{
+	padding-top: 50px;
+	}
+	#news{
+	overflow-y: auto;
+    height: calc(100vh - 125px);
+    padding-left: 5px;
+	}
+	@media (max-width: 768px){
+	#form-line{width: calc(100vw - 115px);}
+	#news{
+	overflow-y: hidden;
+	height: 100%;
+	}
+	#mainpage, #leftpanel, #right-panel{
+	padding-top: 0px;
+	}	
+	}
+	@media (max-width: 992px){
+	#mainpage{
+	padding-top: 100px;
+	}	
+	}
