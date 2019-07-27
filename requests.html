@@ -13,6 +13,14 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="https://dl.dropbox.com/s/euyvs64d3gojt40/a.css" >
 <link rel="stylesheet" href="a-style.css" >
+<style>
+@media (max-width: 1015px){
+.backimg{display: none}
+}
+body{
+background-image: url(https://dl.dropbox.com/s/srmdvlrveljsao6/c120b39fecfd2e5dfa6a5902f49948ee.jpg); background-size: cover;
+}
+</style>
   <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,76 +55,15 @@
   
   <div id="wrap">
   
-  <div id='background-image'>
-<img src="" alt="background-image" id="bg" style="position: fixed;top:0;left:0;width:auto;z-index: -3 !important;background-size: cover;background-repeat: no-repeat;background-attachment: fixed;" />
-<script type="text/javascript" class="noprint">
-var aImages = new Array();
-var aURL = new Array();
-var aArtists = new Array();
-var iPrev = -1;
-var iRnd = -1;
-aImages[0] = "img/backgrounds/001.jpg";
-aImages[1] = "img/backgrounds/002.jpg";
-aImages[2] = "img/backgrounds/003.jpg";
-aImages[3] = "img/backgrounds/004.jpg";
-aImages[4] = "img/backgrounds/005.jpg";
-aImages[5] = "img/backgrounds/006.jpg";
-aImages[6] = "img/backgrounds/007.jpg";
-aImages[7] = "img/backgrounds/008.jpg";
-aImages[8] = "img/backgrounds/009.jpg";
-aImages[9] = "img/backgrounds/010.jpg";
-aImages[10] = "img/backgrounds/011.jpg";
-aImages[11] = "img/backgrounds/012.jpg";
-aImages[12] = "img/backgrounds/013.jpg";
-aImages[13] = "img/backgrounds/014.jpg";
-aImages[14] = "img/backgrounds/015.jpg";
-aImages[15] = "img/backgrounds/016.jpg";
-aImages[16] = "img/backgrounds/017.jpg";
-aImages[17] = "img/backgrounds/018.jpg";
-aImages[18] = "img/backgrounds/019.jpg";
-aImages[19] = "img/backgrounds/020.jpg";
-aImages[20] = "img/backgrounds/021.jpg";
 
-$(document).ready(function() {
-$("img#bg").load(function()
-{
-$("img#bg").fadeTo(2000,1);
-setTimeout(function()
-{
-$("#image_description").animate({right: '-=150'}, 1000);
-$("img#bg").fadeOut(2000);
-setTimeout(LoadImages,2500);
-}
-,30000);
-} 
-)
-setTimeout(LoadImages,1000);
-});
-function LoadImage(iNr)
-{
-$("img#bg").attr("src", aImages[iNr]);
-};
-function LoadImages()
-{
-/* Select a random image number and make sure this is not equal to the previous image */
-while(iPrev == iRnd)
-{
-iRnd = Math.floor(Math.random()*aImages.length);
-}
-/* Show the selected image */
-LoadImage(iRnd);
-iPrev = iRnd;
-};
-</script>
-</div>
 
 <div id="mainpage"style="margin-left: 30%;width: 40%;min-height: 100%;float: left; padding-left: 5px;padding-right: 5px">
 	
 <center>
-<img src="https://dl.dropbox.com/s/vobb3srecfh8vq1/nao_tomori.png" height="250"/></br>
 <font color="red" size="6">Реквесты</font> <br />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9ynKfhXK71QS0LbvQ1gIibf9HENwDpdLSX3WP2-LMaJEhWg/viewform?embedded=true" width="400" height="700" frameborder="0" marginheight="0" marginwidth="0" style="margin: 0px"></iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9ynKfhXK71QS0LbvQ1gIibf9HENwDpdLSX3WP2-LMaJEhWg/viewform?embedded=true" width="350" height="700" frameborder="0" marginheight="0" marginwidth="0" style="margin: 0px"></iframe>
 </center>
+<img class="backimg" src="https://dl.dropbox.com/s/93yxy6svel5evez/06fb0dca7bbdfda1a12e3b686c25e2b5.png" style="position: fixed;top: 0px;right: 10px;height: 100vh;z-index: -1"/>
   
 </div>
 

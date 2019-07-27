@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://dl.dropbox.com/s/euyvs64d3gojt40/a.css" >
 <link rel="stylesheet" href="a-style.css" >
 <link rel="stylesheet" href="slides.css">
+<link rel="stylesheet" href="https://dl.dropbox.com/s/oa9yocfl0hf4hws/slider.css" >
 
   <body>
   
@@ -21,65 +22,7 @@
 
 <div id='background-image'>
 <img src="" alt="background-image" id="bg" style="position: fixed;top:0;left:0;width:auto;z-index: -3 !important;background-size: contain;background-repeat: no-repeat;background-attachment: fixed;" />
-<script type="text/javascript" class="noprint">
-var aImages = new Array();
-var aURL = new Array();
-var aArtists = new Array();
-var iPrev = -1;
-var iRnd = -1;
-aImages[0] = "/img/backgrounds/00001.jpg";
-aImages[1] = "/img/backgrounds/00002.jpg";
-aImages[2] = "/img/backgrounds/00003.jpg";
-aImages[3] = "/img/backgrounds/00004.jpg";
-aImages[4] = "/img/backgrounds/00005.jpg";
-aImages[5] = "/img/backgrounds/00006.jpg";
-aImages[6] = "/img/backgrounds/00007.jpg";
-aImages[7] = "/img/backgrounds/00008.jpg";
-aImages[8] = "/img/backgrounds/00009.jpg";
-aImages[9] = "/img/backgrounds/00010.jpg";
-aImages[10] = "/img/backgrounds/00011.jpg";
-aImages[11] = "/img/backgrounds/00012.jpg";
-aImages[12] = "/img/backgrounds/00013.jpg";
-aImages[13] = "/img/backgrounds/00014.jpg";
-aImages[14] = "/img/backgrounds/00015.jpg";
-aImages[15] = "/img/backgrounds/00016.jpg";
-aImages[16] = "/img/backgrounds/00017.jpg";
-aImages[17] = "/img/backgrounds/00018.jpg";
-aImages[18] = "/img/backgrounds/00019.jpg";
-aImages[19] = "/img/backgrounds/00020.jpg";
-aImages[20] = "/img/backgrounds/00021.jpg";
-
-$(document).ready(function() {
-$("img#bg").load(function()
-{
-$("img#bg").fadeTo(2000,1);
-setTimeout(function()
-{
-$("#image_description").animate({right: '-=150'}, 1000);
-$("img#bg").fadeOut(2000);
-setTimeout(LoadImages,2500);
-}
-,30000);
-} 
-)
-setTimeout(LoadImages,1000);
-});
-function LoadImage(iNr)
-{
-$("img#bg").attr("src", aImages[iNr]);
-};
-function LoadImages()
-{
-/* Select a random image number and make sure this is not equal to the previous image */
-while(iPrev == iRnd)
-{
-iRnd = Math.floor(Math.random()*aImages.length);
-}
-/* Show the selected image */
-LoadImage(iRnd);
-iPrev = iRnd;
-};
-</script>
+<script type="text/javascript" class="noprint" src="js/background_head.js"></script>
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -114,26 +57,58 @@ iPrev = iRnd;
 
 <div id="mainpage"style="margin-left: 30%;width: 40%;min-height: auto;float: left; padding-left: 5px;padding-right: 5px">
 
-    <div id="nav">
+    <div id="nav" style="padding-bottom: 15px">
 <center>
 <font color="#836fc1" class="greeting" size="6">Добро пожаловать на наш сайт!</font> <br />
+</br>
+  <center><font size="5" style="z-index: 5; background: red; color: white;padding: 5px">Разделы</font></center>
+  <div class="slider">
 
+    <div class="slider__wrapper">
+
+      <div class="slider__item">
+        <div class="video" style="background-image: url(https://dl.dropbox.com/s/49tzzlnxxc5e6yo/office-background-image_1631208.jpg);background-size: cover;">
+		<div class="infoslide" style="background: black; border: 1px solid;border-style: solid;border-color: white;padding-left: 5px;margin-top: 15px;float: right;margin-right: 1vw;width:200px;height: 180px; width: 32%;position: absolute;bottom: 15px;left: 30px;overflow-y: auto">
+		<a class="btn" style="background: white !important; color: black" href="achat.html">Чат онлайн</a></br>
+		<font size="3">В этом разделе вы можете расслабиться и послушать музыку по стримам, а также пообщаться в чатах</font>
+		</div>
+<img src="https://dl.dropbox.com/s/urh69nved5xufmo/cat_headphones.png" style="height: 250px;position: absolute;bottom: 0px;z-index: 1;right: 50px"/>
+</div>
+      </div>
+      <div class="slider__item">
+        <div class="video" style="background-image: url(https://dl.dropbox.com/s/vv036uqbfnay6j0/cinema.jpg);background-size: cover;">
+		<div class="infoslide" style="background: black; border: 1px solid;border-style: solid;border-color: white;padding-left: 5px;margin-top: 15px;float: right;margin-right: 1vw;width:200px;height: 180px; width: 35%;position: absolute;bottom: 15px;left: 50px;">
+		<a class="btn" style="background: white !important; color: black"  href="search.html">Онлайн кинотеатр</a></br>
+		<font size="3">В этом разделе вы можете смотреть онлайн аниме, фильмы и сериалы</font>
+		</div>
+<img src="https://dl.dropbox.com/s/st8up7vdt6n07oo/5bb61fead93771663f6cad8a.png" style="height: 250px;position: absolute;bottom: 0px;z-index: 1;right: 50px"/>
+</div>
+      </div>
+      <div class="slider__item">
+        <div class="video" style="background-image: url(https://dl.dropbox.com/s/8xx7orzttlzomak/1057865d2330371.jpg);background-size: cover;">
+		<div class="infoslide" style="background: black; border: 1px solid;border-style: solid;border-color: white;padding-left: 5px;margin-top: 15px;float: right;margin-right: 1vw;width:200px;height: 180px; width: 35%;position: absolute;bottom: 15px;left: 50px;">
+		<a class="btn" style="background: white !important; color: black" href="asites.html" style="text-decoration: none" >Аниме сайты</a></br>
+		<font size="3">В этом разделе вы можете быстро путешествовать по популярным аниме сайтам</font>
+		</div>
+<img src="https://dl.dropbox.com/s/33mw4nzpbolsfez/034.png" style="height: 250px;position: absolute;bottom: 0px;z-index: 1;right: 50px"/>
+</div>
+      </div>
+
+    </div>
+    <a class="slider__control slider__control_left" href="#" role="button"></a>
+    <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+  </div>
+
+  <script src="https://dl.dropbox.com/s/laf9dvakliwj3bd/slider.js"></script>
 </center>
 </div>
-		<div id="nav-buttons">
-			<div id="motd-tabs" style="text-align:center;">
-		  <a class="btn" href="achat.html" style="text-decoration: none">Чат онлайн</a>
-		  <a class="btn"  href="search.html" style="text-decoration: none" >Онлайн кинотеатр</a>
-		  <a class="btn" href="asites.html" style="text-decoration: none" >Аниме сайты</a>
-	  		</div>
-		</div>
  
- 
+ <center><font size="5" style="z-index: 5; background: red; color: white;padding: 5px">Важное</font></center>
 <div class="container-slides">
   <ul id="slides">
     <li class="slide showing">
             <div id="slide-block1" class="shadow">
-	
+	<a href="info.html">Дополнительная информация</a>
             </div>
         <img src="https://animachtk.000webhostapp.com/slides/img/images/slide01/random.php" style="height: 250px;position: absolute;bottom: 0px;right: 0vw;float:right;z-index: -1;"/>
     </li>
@@ -173,75 +148,27 @@ iPrev = iRnd;
   </div>
 </center>
 </div>
+<script src="js/slides.js"></script>
 
-<script>
-var controls = document.querySelectorAll('.controls');
-for(var i=0; i<controls.length; i++){
-    controls[i].style.display = 'inline-block';
-}
+<div id="infowrap">
+<center><font size="5" style="z-index: 5; background: red; color: white;padding: 5px">Обход блокировок сайтов</font></center>
+<div class="video">
+<iframe width="100%" src="https://www.youtube-nocookie.com/embed/Ay5qbDwUaDk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
 
-var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,20000);
-
-function nextSlide(){
-    goToSlide(currentSlide+1);
-}
-
-function previousSlide(){
-    goToSlide(currentSlide-1);
-}
-
-function goToSlide(n){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (n+slides.length)%slides.length;
-    slides[currentSlide].className = 'slide showing';
-}
-
-
-var playing = true;
-var pauseButton = document.getElementById('pause');
-
-function pauseSlideshow(){
-    pauseButton.innerHTML = '&#9658;'; // play character
-    playing = false;
-    clearInterval(slideInterval);
-}
-
-function playSlideshow(){
-    pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
-    playing = true;
-    slideInterval = setInterval(nextSlide,20000);
-}
-
-pauseButton.onclick = function(){
-    if(playing){ pauseSlideshow(); }
-    else{ playSlideshow(); }
-};
-
-var next = document.getElementById('next');
-var previous = document.getElementById('previous');
-
-next.onclick = function(){
-    pauseSlideshow();
-    nextSlide();
-};
-previous.onclick = function(){
-    pauseSlideshow();
-    previousSlide();
-};
-</script>
 	
 </div>
 
 <div id="leftpanel" style="position: fixed;margin-right: 70%;width: 30%;float: left;min-height: 100%;">
-	<div id="radiobells_container"><a href="https://www.radiobells.com/" rel="nofollow" id="RP_link">www.radiobells.com</a> #radiobells_script_hash</div>
-<script type="text/javascript" src="https://dl.dropbox.com/s/vu8ws89d8vvfsg8/radio.js"></script>
+
  <div id="news" style="padding-top: 10px; margin-bottom: 10px;text-align: left;background-color: rgba(0,0,0,0.4)">
 	<center>
 	<img src="https://dl.dropbox.com/s/oem8wyhj7e42h4c/Akari_akaza_by_yukirumo990-d4ifcuc.png" height="200px"/></br>
 	<font color="red" size="6">Что нового?</font>
 	</center> <br />
+	<span><span class="date">27.07.2019</span> - Обновлён интерфейс и добавлены новые разделы.<br /></span>
+	<span><span class="date">26.07.2019</span> - На сайт добавлен онлайн кинотеатр и поиск по торрентам.<br /></span>
 	<span><span class="date">30.05.2019</span> - На сайт добавлен тестовый чат для сообщений.<br /></span>
 	<span><span class="date">29.05.2019</span> - Штаб перенесён на Пурурин (аниме по-прежнему собираемся смотреть на тиваче). Добавлена кнопка с окном, открывающим нашу комнату Пурурин прямо на главной странице здесь (во фрейме). Наконец настроен домен animach.tk и теперь полностью функционирует.<br /></span>
 	<span><span class="date">25.05.2019</span> - Сайт оптимизирован под мобильные экраны.  <br /></span>
@@ -259,6 +186,7 @@ previous.onclick = function(){
 <script type="text/javascript">
 VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, width: "inherit", height: "560", color1: '000000', color2: 'FFFFFF', color3: '1D84D9'}, 107685829);
 </script>
+
 </div>
 
 </div>

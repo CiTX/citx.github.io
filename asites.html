@@ -50,158 +50,71 @@
 <div id="wrap">
 
 <div id='background-image'>
-<img src="" alt="background-image" id="bg" style="position: fixed;top:0;left:0;width:100%;z-index: -3 !important;" />
-<script type="text/javascript" class="noprint">
-var aImages = new Array();
-var aURL = new Array();
-var aArtists = new Array();
-var iPrev = -1;
-var iRnd = -1;
-aImages[0] = "https://dl.dropbox.com/s/069hxdv0gbml1w6/38831_yuruyuri.jpg";
-aImages[1] = "https://dl.dropbox.com/s/14rjjlgublk0k82/227432.jpg";
-aImages[2] = "https://dl.dropbox.com/s/0e7uleklf7h3mic/Rika-Furude-Higurashi-no-Naku-Koro-ni-anime-35890889-1680-1050.jpg";
-aImages[3] = "https://dl.dropbox.com/s/yahm43bwogll3im/HD-Backgrounds-Clannad.jpg";
-aImages[4] = "https://i.imgur.com/uvUgRPm.jpg";
-aImages[5] = "https://i.imgur.com/HUZRnBg.jpg";
-aImages[6] = "https://i.imgur.com/PVe8NxA.jpg";
-aImages[7] = "https://i.imgur.com/n0yP1IJ.jpg";
-aImages[8] = "https://i.imgur.com/BqZKtpp.jpg";
-aImages[9] = "https://i.imgur.com/9IzyWxq.jpg";
-aImages[10] = "https://i.imgur.com/wW36z3K.jpg";
-aImages[11] = "https://i.imgur.com/BkS2IBQ.jpg";
-aImages[12] = "https://i.imgur.com/HlUuVCF.jpg";
-aImages[13] = "https://dl.dropbox.com/s/7r802p106z53tiy/cowboy_bebop.jpg";
-aImages[14] = "https://dl.dropbox.com/s/t2zl3d581t4ukkw/the-disapperance-of-haruhi-suzumiya-2010.jpg";
-
-$(document).ready(function() {
-$("img#bg").load(function()
-{
-$("img#bg").fadeTo(2000,1);
-setTimeout(function()
-{
-$("#image_description").animate({right: '-=150'}, 1000);
-$("img#bg").fadeOut(2000);
-setTimeout(LoadImages,2500);
-}
-,30000);
-} 
-)
-setTimeout(LoadImages,1000);
-});
-function LoadImage(iNr)
-{
-$("img#bg").attr("src", aImages[iNr]);
-};
-function LoadImages()
-{
-/* Select a random image number and make sure this is not equal to the previous image */
-while(iPrev == iRnd)
-{
-iRnd = Math.floor(Math.random()*aImages.length);
-}
-/* Show the selected image */
-LoadImage(iRnd);
-iPrev = iRnd;
-};
-</script>
+<img src="" alt="background-image" id="bg" style="position: fixed;top:0;left:0;width:auto;z-index: -3 !important;background-size: cover" />
+<script type="text/javascript" class="noprint" src="js/background_head.js"></script>
 </div>
 	
-<div id="mainpage"style="margin-left: 30%;width: 40%;min-height: 100%;float: left; padding-left: 5px;padding-right: 5px">
+<div id="mainpage"style="margin-left: 0%;width: 100%;min-height: 100%;float: left; padding-left: 5px;padding-right: 5px;text-align: left;">
+<style>.link{line-height: 45px;
+}
+#linkwrap{background: rgba(0,0,0,0.7); padding: 5px; margin: 15px; width: 345px;}
+@media (min-width: 768px){
+#linkwrap{display: inline-block}
+#linkwrap .btn {display: block !important;}
+}
+@media (max-width: 768px){
+#linkwrap .btn {display: block !important;}
+#wrap{overflow-x: scroll}
+}
+</style>
+<div id="links" style="margin-bottom: 5px;padding-top:30px;width: 200%">
 
-<div class="container-slides">
-  <ul id="slides">
-    <li class="slide showing">
-            <div id="slide-block1" class="shadow">
-            <a href="https://risens.team/anime/" target="_blank">Risens Team</a>
-            <a href="http://wikino.net/" target="_blank">wikino.net</a>
-            <a href="https://animego.org/" target="_blank">animego.org</a>
-            </div>
-        <img src="https://animachtk.000webhostapp.com/slides/img/images/slide01/random.php" style="height: 250px;position: absolute;bottom: 0px;left: 15vw;"/>
-    </li>
-    <li class="slide">
-        <div id="slide-block">
-<img src="https://animachtk.000webhostapp.com/slides/img/images/slide02/random.php" style="height: 250px;position: absolute;bottom: 0px;"/>
-        </div>
-        </li>
-    <li class="slide">
-            <div id="slide-block">
-        <center>
-            <font class="shadow">
-                Здесь должна была быть важная информация
-            </font>
-        </center>
-        <img src="https://animachtk.000webhostapp.com/img/002.png" style="height: 200px"/><a target="_blank" href=""></a>
-            </div>
-        </li>
-  </ul>
-<center>
-  <div class="buttons" style="position: inherit !important;margin: auto">
-    <button class="controls" id="previous" style="float: left">&lt;</button>
-
-    <button class="controls" id="pause" style="margin: auto; margin-top: 10px">&#10074;&#10074;</button>
-
-    <button class="controls" id="next" style="float: right; margin-right: 15px">&gt;</button>
-  </div>
-</center>
+<div id="linkwrap" class="btn">
+<font size="4" color="#836fc1" style="line-height: 45px;background: red; color: white;padding: 5px;">> Информационные</font></br>
+<a class="link" href="http://amvnews.ru/" target="_blank"><img style="max-height: 32px" src="http://amvnews.ru/template/Default/images/header/AMVNews-Logo-2014.png"/> AMV News</a></br>
+<a class="link" href="https://shikimori.one/" target="_blank"><img style="background: black; max-height: 32px" src="https://shikimori.one/assets/layouts/l-top_menu-v2/logo@2x.png"/> Shikimori</a>
 </div>
 
-<script>
-var controls = document.querySelectorAll('.controls');
-for(var i=0; i<controls.length; i++){
-    controls[i].style.display = 'inline-block';
-}
+<div id="linkwrap" class="btn">
+<font size="4" color="#836fc1" style="line-height: 45px;background: red; color: white;padding: 5px;">> Видеохостинги</font></br>
+<a class="link" href="https://www.myvi.tv/category/anime?filters=popular" target="_blank"><img style="background: white; max-height: 32px" src="https://dl.dropbox.com/s/etz86xntnexhusw/myvi.PNG"/> Myvi.tv</a></br>
+<a class="link" href="https://video.sibnet.ru/" target="_blank"><img style="background: white; max-height: 32px" src="https://dl.dropbox.com/s/wr35t3dfsowxbmq/sibnet.PNG"/> Sibnet.ru</a></br>
+</div>
+</br>
 
-var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,20000);
+<div id="linkwrap" class="btn">
+<font size="4" color="#836fc1" style="line-height: 45px;background: red; color: white;padding: 5px">> Даберы и саберы</font></br>
+<a class="link" href="https://online.anidub.com/" target="_blank"><img style="background: white; max-height: 32px" src="https://online.anidub.com/templates/Anidub_online/img/logo3.png"/> AniDub</a></br>
+<a class="link" href="https://www.anilibria.tv/" target="_blank"><img style="background: white; max-height: 32px" src="https://fandub.wiki/images/9/9e/Anilibria.png"/> AniLibria.tv</a></br>
+<a class="link" href="http://shiza-project.com/" target="_blank"><img style="background: rgb(255, 75, 43); max-height: 150px" src="http://shiza-project.com/assets/img/default/logo.svg"/> SHIZA Project</a></br>
+<a class="link" href="https://sovetromantica.com/" target="_blank"><img style="background: white; max-height: 32px;max-width: 32px" src="https://sovetromantica.com/assets/images/logotype.svg?net_uberi_ruki"/> Sovet Romantica</a></br>
+<a class="link" href="https://risens.team/anime/" target="_blank"><img style="background: #212529; max-height: 32px" src="https://risens.team/templates/Risens-Team-V4/img/logo_1.png"/> Risens Team</a></br>
+<a class="link" href="http://animevost.club/" target="_blank"><img style="background: rgb(255,142,1); max-height: 32px" src="http://animevost.club/images/logotv.png"/> AnimeVost.tv</a></br>
+<a class="link" href="https://kansai.studio/" target="_blank"><img style="background: rgb(255,142,1); max-height: 32px" src="https://dl.dropbox.com/s/rbtcaceu2rzpj3d/kansai.PNG"/> Kansai Studio</a></br>
+</div>
 
-function nextSlide(){
-    goToSlide(currentSlide+1);
-}
+<div id="linkwrap" class="btn">
+<font size="4" color="#836fc1" style="line-height: 45px;background: red; color: white;padding: 5px">> Базы с аниме</font></br>
+<a class="link" href="https://smotret-anime-365.ru/" target="_blank"><img style="background: white; max-height: 32px" src="https://smotret-anime-365.ru/images/logo.png?2"/> SA - smotret-anime.ru</a></br>
+<a class="link" href="http://www.animespirit.ru/" target="_blank"><img style="background: white; max-height: 32px" src="http://www.animespirit.ru/templates/Anime/images/logo.png"/> Animespirit.ru</a></br>
+<a class="link" href="http://animeonline.su/" target="_blank"><img style="background: black; max-height: 32px" src="http://animeonline.su/templates/main/images/logo.png"/> AOS - animeonline.su</a></br>
+<a class="link" href="https://findanime.org/" target="_blank"><img style="background: #333333;; max-height: 32px" src="https://static.findanime.org/static/logo-65853062220e8e187238964c0f6bad14.png"/> FindAnime</a></br>
+<a class="link" href="https://wikino.net/" target="_blank"><img style="background: white; max-height: 32px" src="https://wikino.net/templates/Anicord/images/logotype.png"/> Wikino</a></br>
+<a class="link" href="https://animego.org/" target="_blank"><img style="background: black; max-height: 32px" src="https://animego.org/animego/images/logo/logo.png"/> AnimeGO.org</a></br>
+<a class="link" href="https://animego.biz/" target="_blank"><img style="background: black; max-height: 32px" src="https://animego.biz/templates/animego/images/logo.jpg"/> Animego.biz</a></br>
+</div>
 
-function previousSlide(){
-    goToSlide(currentSlide-1);
-}
+<img class="backimg" src="https://dl.dropbox.com/s/nhzzc4lx362qmt6/WPX7uPU.png" style="position: fixed;top: 0px;right: 10px;height: 100vh;z-index: -1"/>
 
-function goToSlide(n){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (n+slides.length)%slides.length;
-    slides[currentSlide].className = 'slide showing';
-}
+</div>
 
 
-var playing = true;
-var pauseButton = document.getElementById('pause');
 
-function pauseSlideshow(){
-    pauseButton.innerHTML = '&#9658;'; // play character
-    playing = false;
-    clearInterval(slideInterval);
-}
 
-function playSlideshow(){
-    pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
-    playing = true;
-    slideInterval = setInterval(nextSlide,20000);
-}
 
-pauseButton.onclick = function(){
-    if(playing){ pauseSlideshow(); }
-    else{ playSlideshow(); }
-};
 
-var next = document.getElementById('next');
-var previous = document.getElementById('previous');
 
-next.onclick = function(){
-    pauseSlideshow();
-    nextSlide();
-};
-previous.onclick = function(){
-    pauseSlideshow();
-    previousSlide();
-};
-</script>
+
 	
 </div>
 
