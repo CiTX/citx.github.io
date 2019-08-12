@@ -1,6 +1,7 @@
 AddSRModeBtn = $('<span id="add-sr-mode-btn" class="btn btn-sm btn-default" title="Открыть форму для добавления"><img src="https://sovetromantica.com/favicon.ico?sovet2chantica" style="height: 12px"/></span>').insertAfter("#showmediaurl").on("click", function() {
 if (!$(this).hasClass('btn-success')) {
 $(this).addClass('btn-success').html('<span title="Закрыть форму"><img src="https://sovetromantica.com/favicon.ico?sovet2chantica" style="height: 14px"/></span>');
+$('#prompt-form').removeClass('btn-success');
 $('#prompt-form').remove();
 $('<form id="sr-form"><div id="prompt-message"></div><input name="text" type="text" class="form-control" placeholder="Ссылка"></br><input name="title" type="text" class="form-control" placeholder="Название"></br><input name="seriebegin" type="text" class="form-control" placeholder="Начальная серия"></br><input name="serieend" type="text" class="form-control" placeholder="Конечная серия"></br><input type="submit" value="ОК" class="btn btn-sm btn-default"><input type="button" name="cancel" value="Отмена" class="btn btn-sm btn-default"></form>').appendTo('#leftpane');
 let asrmTitle = '<center><strong><font color="red">Форма для добавления аниме сериалов с сайта</font></br><a href="https://sovetromantica.com/" target="_blank">Sovet Romantica</a></strong></center>';
@@ -82,6 +83,7 @@ function showPrompt(text,callback) {
 
 } else {
 $(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><img src="https://sovetromantica.com/favicon.ico?sovet2chantica" style="height: 12px"/></span>');
+$('#prompt-form').removeClass('btn-success');
 $('#prompt-form').remove();
 $('#sr-form').remove();}
   });
