@@ -26,7 +26,7 @@
 </head>
 
 <body>
-
+<div id="tetrisrow">
 <div class="score">счёт: <span id="result">0</span></div>
   
   <div id="stack">
@@ -91,6 +91,7 @@
         <div data-x="0" class="brick"></div><div data-x="1" class="brick"></div><div data-x="2" class="brick"></div><div data-x="3" class="brick"></div><div data-x="4" class="brick"></div><div data-x="5" class="brick"></div><div data-x="6" class="brick"></div><div data-x="7" class="brick"></div><div data-x="8" class="brick"></div><div data-x="9" class="brick"></div>
     </div>
 </div>
+</div>
 <script>
 var fs = "1111:01|01|01|01*011|110:010|011|001*110|011:001|011|010*111|010:01|11|01:010|111:10|11|10*11|11*010|010|011:111|100:11|01|01:001|111*01|01|11:100|111:11|10|10:111|001", now = [3,0], pos = [4,0];
 var gP = function(x,y) { return document.querySelector('[data-y="'+y+'"] [data-x="'+x+'"]'); };
@@ -119,7 +120,7 @@ window.addEventListener('keydown', kdf = function(e){
             if(draw([0,0], 'on', deDraw())||true) check();
             if(false === draw([0,0], undefined, now = [Math.floor(Math.random()*fs.split('*').length),0], pos = [4,0])) { 
 				toV=-1; 
-				alert('Ваш счёт: '+document.querySelector('#result').innerHTML); 
+				var Tbody = document.getElementById('tetrisrow');Tbody.outerHTML='Ваш счёт: '+document.querySelector('#result').innerHTML; 
 			}
         }
 });
