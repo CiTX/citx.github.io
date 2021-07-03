@@ -27,7 +27,7 @@
 
 <body>
 
-<div class="score">score: <span id="result">0</span></div>
+<div class="score">счёт: <span id="result">0</span></div>
   
   <div id="stack">
     <div data-y="0" class="line">
@@ -119,7 +119,7 @@ window.addEventListener('keydown', kdf = function(e){
             if(draw([0,0], 'on', deDraw())||true) check();
             if(false === draw([0,0], undefined, now = [Math.floor(Math.random()*fs.split('*').length),0], pos = [4,0])) { 
 				toV=-1; 
-				alert('Your score: '+document.querySelector('#result').innerHTML); 
+				alert('Ваш счёт: '+document.querySelector('#result').innerHTML); 
 			}
         }
 });
