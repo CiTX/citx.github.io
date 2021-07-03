@@ -120,7 +120,7 @@ window.addEventListener('keydown', kdf = function(e){
             if(draw([0,0], 'on', deDraw())||true) check();
             if(false === draw([0,0], undefined, now = [Math.floor(Math.random()*fs.split('*').length),0], pos = [4,0])) { 
 				toV=-1; 
-				var Tbody = document.getElementById('result');Tbody.outerHTML='Игра закончена.</br>Ваш счёт: '+document.querySelector('#result').innerHTML; 
+				var Tbody = document.getElementById('result');Tbody.outerHTML=document.querySelector('#result').innerHTML+'</br>Игра закончена.'; 
 			}
         }
 });
