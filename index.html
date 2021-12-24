@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://dl.dropbox.com/s/euyvs64d3gojt40/a.css" >
+    <link rel="stylesheet" type="text/css" href="https://dl.dropbox.com/s/3wima67t04ypal5/crstyle.css" >
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>SNtube</title>
+	<link id="chanfavicon" href="https://dl.dropbox.com/s/ak8vf6q395s48md/active_temp_queue.png" type="image/x-icon" rel="shortcut icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+<style>
+@media (max-width: 1015px){
+
+#right-panel {display: none}
+}
+.dropdown-menu>li>a {color: white;}
+.dropdown-menu>li>a:hover {color: black;}
+.alert-info {
+    background-color: rgba(78,185,217,0.75);
+    border-color: rgba(21,79,96,0.75);
+    color: #ffffff;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
+</style>
+  <body>
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Навигация</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">SNtube</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+	<li class="dropdown" style="cursor: pointer;">
+  <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Разделы
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color: rgba(0,0,0,0.7);">
+    <li><a href="">Главная</a></li>
+    <li><a href="tetrisgame">Тетрис</a></li>
+    <li><a href="streams">Стримы</a></li>
+    <li><a href="search">Поиск фильмов</a></li>	
+  </ul>
+		</li>
+		<li class="dropdown" style="cursor: pointer;">
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color: rgba(0,0,0,0.7);">	
+  </ul>
+		</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+.dropdown-menu>li>a {color: white;}
+.dropdown-menu>li>a:hover {color: black;}
+</style>
+
+<div id="wrap">
+<script src="js/navbar.js"></script>
+
+<section id="mainpage">
+<div class="container-fluid">
+
+	<div class="row" id="motdrow">
+            <div class="col-lg-12 col-md-12">
+              <div class="well" id="motdwrap">
+                <button class="close pull-right" id="togglemotd" type="button"><span class="glyphicon glyphicon-minus"></span></button>
+                <div id="motd">
+		</div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+	
+<div id="main" class="row">
+<div class="col-lg-5 col-md-5" id="chatwrap">
+              <div id="chatheader">
+			  <i class="glyphicon glyphicon-chevron-down pull-left pointer" id="userlisttoggle" title="Show/Hide Userlist"></i>
+			  <span class="pointer" id="usercount"></span>
+			  <span id="feedback"></span>
+			  </div>
+              <div id="userlist" style=""></div>
+              <div class="linewrap" id="messagebuffer" style=""></div>
+              <input class="form-control" id="chatline" type="text" maxlength="320" style=""><button id="send-btn" class="btn btn-default btn-block" title="Отправить сообщение" style="width: 50px"><i class="glyphicon glyphicon-comment"></i></button>
+              <div class="input-group" id="guestlogin" style=""><span class="input-group-addon">Гостевой вход</span>
+                <input class="form-control" id="guestname" type="text" placeholder="Имя">
+              </div>
+            </div>
+<div class="col-lg-7 col-md-7" id="videowrap">
+            </div>
+</div>
+<div class="row" id="controlsrow">
+            <div class="col-lg-5 col-md-5" id="leftcontrols">
+              <div id="chat-controls" class="btn-group"><button id="smiles-btn" class="btn btn-sm btn-default" title="Показать смайлики"><img src="https://dl.dropbox.com/s/xas8745loy9ll13/Ziq8tHot.png" style="width: 18px;height: 18px;"></button>
+			  
+			  <button title="Стикеры" class="btn btn-sm btn-default" id="stiker-btn"><img src="https://raw.githubusercontent.com/citx/citx.github.io/master/img/kurumi-chan/kurumi-chan-006.png" height="16px"></button>
+			  
+            </div>
+<div class="image" style="position: fixed;right: 0px;bottom: -5px;z-index: -1"><script src="js/pic.js"></script></div>
+</div>
+            <div class="col-lg-7 col-md-7" id="rightcontrols">
+              <div class="btn-group" id="plcontrol">
+                
+		<button class="btn btn-sm btn-default collapsed" id="showmediaurl" title="Add video from URL" data-toggle="collapse" data-target="#addfromurl" aria-expanded="false" style=""><span class="glyphicon glyphicon-plus"></span></button>
+
+                <button class="btn btn-sm btn-default collapsed" id="showcustomembed" title="Embed a custom frame" data-toggle="collapse" data-target="#customembed" aria-expanded="false" style=""><span class="glyphicon glyphicon-th-large"></span></button>
+</div>
+              <div class="btn-group pull-right" id="videocontrols">
+                <button class="btn btn-sm btn-default" id="voteskip" title="Voteskip" disabled="disabled"><span class="glyphicon glyphicon-step-forward"></span></button>
+              </div>
+            </div>
+          </div>
+
+
+		  
+<div class="row" id="playlistrow">
+            <div class="col-lg-5 col-md-5" id="leftpane">
+              <div class="row" id="leftpane-inner">
+                <div class="col-lg-12 col-md-12" id="pollwrap"></div>
+                <div class="col-lg-12 col-md-12" id="playlistmanagerwrap"></div>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-7" id="rightpane">
+<div class="row" id="rightpane-inner">
+                
+                <div class="plcontrol-collapse col-lg-12 col-md-12 collapse" id="addfromurl" aria-expanded="true" style="height: 110px;">
+                  <div class="vertical-spacer"></div>
+                  <div class="input-group">
+                    <input class="form-control" id="mediaurl" type="text" placeholder="Media URL"><span class="input-group-btn">
+                      <button class="btn btn-default" id="queue_end">В конец</button></span>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input class="add-temp" type="checkbox">Add as temporary
+                    </label>
+                  </div>
+                  <div id="addfromurl-queue"></div>
+                </div>
+		
+		<div class="plcontrol-collapse col-lg-12 col-md-12 collapse" id="customembed" aria-expanded="true" style="">
+                  <div class="vertical-spacer"></div>
+                  <div class="input-group">
+                    <input class="form-control" id="customembed-title" type="text" placeholder="Заголовок (необязательно)"><span class="input-group-btn">
+                      <button class="btn btn-default" id="ce_queue_next">След.</button></span><span class="input-group-btn">
+                      <button class="btn btn-default" id="ce_queue_end">В конец</button></span>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input class="add-temp" type="checkbox">Не прикреплять видео
+                    </label>
+                  </div>
+                  Вставьте код видео в поле ниже и нажмите "След." или "В конец".
+                  Можно добавить видео с тегами <code>&lt;iframe&gt;</code> или <code>&lt;object&gt;</code>. <strong>СИНХРОНИЗАЦИЯ БУДЕТ НЕДОСТУПНА.</strong>
+                  <textarea class="input-block-level form-control" id="customembed-content" rows="3"></textarea>
+                </div>
+                
+                
+                <div class="col-lg-12 col-md-12" id="queuefail">
+                  <div class="vertical-spacer"></div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                  <ul class="videolist ui-sortable" id="queue" style=""></ul>
+                  <div id="plmeta" style=""><span id="plcount">0 items</span><span id="pllength">00:00</span></div>
+                </div>
+              </div>		
+				
+              </div>
+            </div>
+          </div>		  
+
+</div>
+</section>
+</div> 
+<div id="pmbar"></div>
+    <script src="https://dl.dropbox.com/s/irriddam85dbg1c/chat.js"></script>
+  </body>
+</html>
