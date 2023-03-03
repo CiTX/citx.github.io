@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://dl.dropbox.com/s/euyvs64d3gojt40/a.css" >
-    <title>SNtube</title>
+    <title>Stream</title>
 	<link id="chanfavicon" href="https://dl.dropbox.com/s/ak8vf6q395s48md/active_temp_queue.png" type="image/x-icon" rel="shortcut icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://dl.dropbox.com/s/b3ml219ayy07anq/jquery-ui.js"></script>
@@ -15,48 +15,6 @@
   </head>
 <body>
 <div id="wrap"></div>
-<script>
-function getAllUrlParams(url) {
-  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-  var obj = {};
-  if (queryString) {
-    queryString = queryString.split('#')[0];
-    var arr = queryString.split('&');
-    for (var i=0; i<arr.length; i++) {
-      var a = arr[i].split('=');  
-      var paramNum = undefined;
-      var paramName = a[0].replace(/\[\d*\]/, function(v) {
-        paramNum = v.slice(1,-1);
-        return '';
-      });
-      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
-      paramName = paramName.toLowerCase();
-      paramValue = paramValue.toLowerCase();
-      if (obj[paramName]) {
-        if (typeof obj[paramName] === 'string') {
-          obj[paramName] = [obj[paramName]];
-        }
-        if (typeof paramNum === 'undefined') {
-          obj[paramName].push(paramValue);
-        }
-        else {
-          obj[paramName][paramNum] = paramValue;
-        }
-      }
-      else {
-        obj[paramName] = paramValue;
-      }
-    }
-  }
-  return obj;
-}
-
-let url=getAllUrlParams().url;
-
-if(typeof url!=="undefined"){
-if(url!==""){
-$(`<iframe id="testfr" src="https://vikistream.com/embed2.php?player=desktop&amp;live=espnusa" referrerpolicy="no-referrer" style="width:100%;height:100%" src='javascript:window.location.replace("https://iframetarget.tld")' frameBorder="0" ></iframe>`).appendTo('#wrap')
-}}
-</script>
+<script src="https://dl.dropboxusercontent.com/s/ebebp3k4j4gepii/getStream.js"></script>
   </body>
 </html>
