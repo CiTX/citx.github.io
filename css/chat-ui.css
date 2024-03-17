@@ -1,0 +1,290 @@
+/* Первое сообщение */
+#messagebuffer div:nth-child(2) .msg  {
+    border-end-end-radius: 4px;
+}
+
+/* Сообщение, находящееся в середине набора сообщений */
+
+#messagebuffer div .msg {
+    border-start-end-radius: 14px;
+    border-end-end-radius: 14px;
+    background-color: #0b394a;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2px;
+	padding: 1em 1.5em;
+	border-radius: 1em;
+	position: relative;
+	line-height: 1.5em;
+	min-width: fit-content;
+}
+
+#messagebuffer div.nick-highlight .msg {
+    background-color: #488489;
+}
+
+#messagebuffer  .nick-highlight{background-color: rgba(0,0,0,0.01) !important;}
+
+#messagebuffer div .msg:nth-child(3)::after, 
+#messagebuffer div .msg:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 15px;
+    width: 0.8em;
+    height: 1.8em;
+    border-radius: 50%;
+}
+#messagebuffer div .msg:nth-child(3)::before {
+    border-top: none;
+    height: 0.5em;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    background: #0b394a;
+    border-color: #0b394a;
+    margin-left: -0.5em;
+}
+#messagebuffer div.nick-highlight .msg:nth-child(3)::before {
+    background: #488489;
+    border: 3px solid #488489;
+}
+#messagebuffer div.nick-highlight .msg:nth-child(3)::after {
+    border: 0.5em solid transparent;
+}
+
+
+
+/* Последнее сообщение */
+#messagebuffer div:last-of-type .msg {
+    border-start-end-radius: 4px;
+}
+
+.timestamp{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    float:right;
+    padding-left: 5px;
+	font-size: 7pt;
+}
+#messagebuffer .username,.uname {
+    min-width: 50px;
+    height: 50px;
+    background-color: #181818;
+    padding: 15px;
+    float: left;
+    word-wrap: break-word;
+    margin-right: 10px;
+}
+
+.chat-msg-\$server\${
+margin: 5px;
+}
+
+#messagebuffer .self .msg {
+    background-color: #4a8948;
+}
+#messagebuffer .self .msg:nth-child(3)::after, .self .msg:nth-child(3)::before {
+    left: 101% !important;
+}
+#messagebuffer .self .msg:nth-child(3)::before {
+    border-radius: 0% 0% 50% 0% / 0% 0% 100% 100%;
+    background: #4a8948;
+    border-color: #4a8948;
+}
+#messagebuffer .self:nth-child(1) .msg  {
+border-end-start-radius: 4px;
+    border-start-end-radius: 14px;
+}
+#messagebuffer .self:last-of-type .msg {
+    border-start-start-radius: 4px;
+    border-start-end-radius: 14px;
+}
+
+.self .timestamp{
+float:left;
+margin-right: 10px;
+margin-left: 0px;
+}
+
+#messagebuffer .self .username,#messagebuffer .self .uname {
+float:right;
+margin-right: 0px;
+margin-left: 10px;
+}
+
+.msg img:nth-child(n+2) {
+    display:none
+}
+
+.msg img {
+    max-width:100% !important;
+}
+
+#userlist {
+    width: 75px;
+}
+
+#messagebuffer strong.username,#messagebuffer strong.uname {
+    width: 3ch;
+    overflow: hidden;
+    margin-bottom: 0px;
+    line-height: 2;
+    text-transform: uppercase;
+    padding-right: 3px;
+    border-radius: 1.5em;
+    font-size: 0.8em;
+    min-width: 35px;
+    height: 35px;
+    padding-left: 5px;
+    padding-top: 7px;
+}
+
+#messagebuffer div .msg {
+    padding: 0.6em 1.5em;
+    line-height: 1.5em;
+}
+
+#messagebuffer div.chat-msg-\$cirno\$ .username{
+width: auto;
+text-transform: none;
+}
+
+#messagebuffer div .msg{
+align-items: baseline;
+max-width: max-content;
+min-height: 25pt;
+}
+#messagebuffer div.self .msg{
+align-items: end;
+max-width: none;
+min-height: 25pt;
+}
+
+#messagebuffer div .msg a {
+    word-break: break-word;
+}
+
+code,.action,.greentext{
+/*    text-shadow: 
+#000000 1px 0 10px, 
+#000000 0 1px 10px, 
+#000000 0 -1px 10px, 
+#000000 -1px 0 10px*/
+background-color: black;
+}
+
+#messagebuffer div.global .msg{
+background-color:#28152e
+}
+
+#messagebuffer div.global .msg:nth-child(3)::before {
+    background: #28152e;
+    border-color: #28152e;
+}
+
+#messagebuffer  .uname:hover,
+#messagebuffer .username:hover{
+width: auto;
+text-transform: none;
+}
+
+/*position fix 1.0.1*/
+#messagebuffer div {
+    width: 100%;
+    display: inline-block;
+    margin-right: -5px;
+	overflow-x: clip;
+}
+.timestamp{
+color: #858585;
+font-weight: 600;
+}
+.self .timestamp {
+    margin-right: 0px;
+    margin-left: -5px;
+    margin-top: 0px;
+    float: left;
+}
+#messagebuffer div.self .msg {
+    align-items: end;
+    max-width: max-content;
+    float: right;
+}
+
+.timestamp.server-whisper {
+    float: right;
+    padding-right: 5px;
+}
+
+#messagebuffer .self .username, #messagebuffer .self .uname {
+    margin-left: 0px;
+}
+.server-msg-reconnect,
+.server-msg-disconnect {
+border-radius: 15px
+}
+#messagebuffer div.self  .username  + .msg{
+max-width: calc(100% - 102px);
+}
+
+#messagebuffer div.self .msg{
+min-width: auto;
+max-width: calc(100% - 67px);
+}
+#messagebuffer div .msg {
+    word-break: break-word;
+}
+
+#messagebuffer div .msg{
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+}
+
+#messagebuffer div.self .msg{
+align-items: center;
+}
+
+
+
+/*#messagebuffer div.self .msg {
+    text-align: end;
+}*/
+
+.msg span:nth-child(n+2) > img ,
+.msg span:nth-last-child(n+2) > img ,
+.msg img:nth-last-child(n+2),
+.msg img:nth-child(n+2) {
+    display: block;
+    max-height: 30px !important; 
+}
+
+@media (max-width: 992px){
+.chat-msg-\$server\$ {
+    margin: 0px;
+}
+#messagebuffer div .msg {
+    padding: 0.2em 1.5em;
+    line-height: 1.5em;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size:1em;
+}
+#messagebuffer strong.username, #messagebuffer strong.uname {
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-top: 7px;
+}
+}
+#messagebuffer div .msg{
+justify-content:flex-start;
+}
+
+#messagebuffer div.self .msg{
+justify-content:flex-end;
+}
