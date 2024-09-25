@@ -1,6 +1,6 @@
 @import url("cytube.css");
-@import url("chat-ui.css");
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+/*@import url("chat-ui.css");*/
 
 body{background-image: url(https://dl.dropbox.com/scl/fi/lrll0dkv57zuqqg9lsupe/Wallpaper-Abstract-Photos.jpg?rlkey=lvb1arbnspk2nhxm8vh7bnuz4);background-size:cover;background-repeat:no-repeat;background-attachment: fixed;background-color: black;overflow-x: hidden;}
 #nav-collapsible, 
