@@ -109,7 +109,7 @@ span {
 </style>
 
 <script>
-window.NatrixId=0;
+window.NatrixId=true;
 function r(from, to) {
   return ~~(Math.random() * (to - from + 1) + from);
 }
@@ -126,6 +126,7 @@ function getChar() {
 function loop(fn, delay) {
   let stamp = Date.now();
   function _loop() {
+    if (!window.NatrixId){return}
     if (Date.now() - stamp >= delay) {
       fn(); stamp = Date.now();
     }
