@@ -109,7 +109,7 @@ span {
 </style>
 
 <script>
-var NatrixId;
+window.NatrixId=0;
 function r(from, to) {
   return ~~(Math.random() * (to - from + 1) + from);
 }
@@ -129,9 +129,9 @@ function loop(fn, delay) {
     if (Date.now() - stamp >= delay) {
       fn(); stamp = Date.now();
     }
-    NatrixId = requestAnimationFrame(_loop);
+    window.NatrixId = requestAnimationFrame(_loop);
   }
-  NatrixId = requestAnimationFrame(_loop);
+  window.NatrixId = requestAnimationFrame(_loop);
 }
 class Char {
   constructor() {
