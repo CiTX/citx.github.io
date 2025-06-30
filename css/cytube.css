@@ -291,17 +291,17 @@ li.ui-sortable-helper, li.ui-sortable-placeholder + li.queue_entry {
 }
 
 .userlist_master[style="color: rgb(239, 239, 239);"] {
-    color: #cc0000;
+    color: #cc0000!important;
     font-weight: bold!important;
 }
 
 .userlist_owner[style="color: rgb(239, 239, 239);"] {
-    color: #0000cc;
+    color: #0000cc!important;
     font-weight: bold!important;
 }
 
 .userlist_op[style="color: rgb(239, 239, 239);"] {
-    color: #2266AA;
+    color: #2266AA!important;
 }
 
 .userlist_guest {
