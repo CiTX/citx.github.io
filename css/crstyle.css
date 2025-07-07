@@ -407,7 +407,7 @@ border: 4px solid red;
     box-shadow: 0 0 10px rgb(0 0 0 / 30%);
     margin: 26px 14px 26px 14px;
     max-width: none;
-    min-height: 300px;
+    min-height: auto;
     padding: 24px;
     position: relative;
     width: calc(100% - 28px);
