@@ -54,7 +54,7 @@ $('.mobile-view-iu').remove();
 
 function CreateMobileUI(){
 $(`#mobile-menu`).remove();
-$(`<div id="mobile-menu" style="text-align: center;position: fixed;top: 0px;width: 100%;max-height: 50px;height: 50px;z-index: 1030;left: 70px;">
+$(`<div id="mobile-menu" style="text-align: center;position: fixed;top: 0px;width: 100%;max-height: 50px;height: 50px;z-index: 1030;left: 0px;">
 <button class="btn btn-sm btn-default motdbtnmenu"><img src="https://raw.githubusercontent.com/CiTX/citx.github.io/master/mobile/info-btn.png" style="height: 32px"/></button>
 <button class="btn btn-sm btn-default playlistbtnmenu"><img src="https://raw.githubusercontent.com/CiTX/citx.github.io/master/mobile/video-playlist.png" style="height: 32px"/></button>
 <button id="pm-chat" class="btn btn-sm btn-default pmchatbtnmenu"><span><img src="https://raw.githubusercontent.com/CiTX/citx.github.io/master/mobile/pm-btn.png" style="height: 32px"/></span></button>
