@@ -583,3 +583,9 @@ width:100% !important;
 #my_video_page_toggle a:before{background:none !important}
 #my_video_page_toggle a{margin-left: 0px}
 }
+#my_video_page_toggle {
+    width: 100% !important;
+}
+#my_video_page_toggle a {
+    color: #c8c8c8 !important;
+}
