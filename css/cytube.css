@@ -723,7 +723,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 /* CYTUBE EDIT */
 
 .userlist_owner {
-    color: #ff9900 !important;
+    color: #ff9900;
 }
 
 .nick-highlight {
